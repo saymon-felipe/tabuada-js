@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+
+    html, body {
+        height: 100%;
+        overflow-x: hidden;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        background: url(fundo.jpg);
+    }
+
+    .container {
+        background: rgba(238, 238, 238, 0.8);
+        width: 80%;
+        min-width: 400px;
+        margin: 15% auto;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 50px 30px;
+        padding-bottom: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        letter-spacing: 3px;
+        border-radius: 20px;
+        backdrop-filter: blur(2px);
+        box-shadow: rgba(192, 192, 192, 0.692) 3px 3px 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer {
+        padding: 60px 0 15px 0;
+    }
+
+    .container h1 {
+        margin-bottom: 10px;
+    }
+
+    .container p {
+        margin-top: 50px;
+        font-size: 1.3em;
+    }
+
+    .pb-5 {
+        padding-bottom: 30px;
+    }
+
+    #texto {
+        text-align: left;
+    }
+
+    .center {
+        align-self: center;
+    }
+
+    #botao {
+        padding: 5px 10px;
+    }
+
+    #botao:hover {
+        cursor: pointer;
+    }
+
+    #botao:active {
+        background: rgb(61, 61, 61);
+        color: white;
+        border: 1px solid white;
+        border-radius: 1px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="pb-5">
+            <h1>TABUADA</h1>
+            <h4>Digite um número abaixo e a tabuada será formada em seguida.</h4>
+        </div>
+        <div>
+            <label for="numero">Digite um número inteiro</label>
+            <input type="number" name="numero" id="numero">
+            <input id="botao" type="submit" onclick="calcular()">
+        </div>
+        <div class="center">
+            <p id="texto"></p>
+        </div>
+        <footer>
+            <h5>Developed by RabSystems</h5>
+        </footer>
+    </div>
+    <script>
+
+        function calcular() {
+            num = document.getElementById("numero").value
+            texto = document.getElementById("texto")
+            texto.innerHTML = ""
+            if (document.getElementById("numero").value == "") {
+                alert("Insira um numero.")
+            }
+            else {
+                texto.innerHTML = ""
+
+                for (i = 0; i < 11; i++) {
+                    multiplicacao = num * i
+                    texto.innerHTML += `${num} X ${i} = ${multiplicacao} <br>`
+                }
+
+                    document.getElementById("numero").value = ""
+                }
+        }
+
+    </script>
+</body>
+</html>
